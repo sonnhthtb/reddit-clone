@@ -11,9 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SignupComponent implements OnInit {
 
-    signupForm!: FormGroup;
-    signupRequestPayload!: SignupRequestPayload
-
+    signupForm: FormGroup = new FormGroup({});
+    signupRequestPayload: SignupRequestPayload
     constructor(private authService: AuthService, private router: Router,
         private toastr: ToastrService) {
         this.signupRequestPayload = {
