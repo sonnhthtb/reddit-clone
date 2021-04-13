@@ -12,6 +12,7 @@ import com.example.Reddit.repository.SubredditRepository;
 import com.example.Reddit.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,7 +49,7 @@ public class PostService {
 
     @Transactional(readOnly = true)
     public List<PostResponse> getAllPosts() {
-        return postRepository.findAll()
+        return postRepository.findAll(Sort.by(Sort.Direction.DESC, "createdDate"))
                 .stream()
                 .map(postMapper::mapToDto)
                 .collect(toList());
@@ -58,7 +59,7 @@ public class PostService {
     public  List<PostResponse> getPostsBySubreddit(Long subredditId) {
         Subreddit subreddit = subredditRepository.findById(subredditId)
                 .orElseThrow(() -> new SubredditNotFoundException(subredditId.toString()));
-        List<Post> posts = postRepository.findAllBySubreddit(subreddit);
+        List<Post> posts = postRepository.findAllBySubreddit(subreddit, Sort.by(Sort.Direction.DESC, "createdDate"));
         return posts.stream().map(postMapper::mapToDto).collect(toList());
     }
 

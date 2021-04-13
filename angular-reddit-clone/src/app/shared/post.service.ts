@@ -33,7 +33,7 @@ export class PostService {
     }
 
     getAllPostsBySubreddit(id: number): Observable<PostModel[]> {
-        return this.http.get<PostModel[]>(
+        return this.http.get<Array<PostModel>>(
             'http://localhost:8080/api/posts/by-subreddit/' + id
         );
     }

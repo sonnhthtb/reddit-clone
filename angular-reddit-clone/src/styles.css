@@ -1,32 +1,33 @@
-html{
-  padding: 0;
-  height: 100%;
+html {
+    padding: 0;
+    height: 100%;
 }
-body{
-  margin-top: 63px;
-  height: 100%;
+body {
+    margin-top: 63px;
+    height: 100%;
+    background-color: rgba(200, 200, 200, 0.8);
 }
 
 input.ng-invalid.ng-touched {
-  border: 1px solid red;
+    border: 1px solid red;
 }
 
 .login,
 .sign-up {
-  background-color: #0079D3;
-  border-color: #0079D3;
-  color: aliceblue;
-  fill: #0079D3;
-  border: 1px solid;
-  border-radius: 4px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  line-height: 24px;
-  text-transform: uppercase;
-  padding: 3px 16px;
-  opacity: 1;
+    background-color: #0079d3;
+    border-color: #0079d3;
+    color: aliceblue;
+    fill: #0079d3;
+    border: 1px solid;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 3px 16px;
+    opacity: 1;
 }

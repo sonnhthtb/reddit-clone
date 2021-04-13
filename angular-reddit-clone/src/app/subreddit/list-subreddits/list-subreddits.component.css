@@ -4,6 +4,7 @@
     line-height: 20px;
     color: #1c1c1c;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .list-subreddit > ul {
     list-style-type: none;
