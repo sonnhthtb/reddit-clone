@@ -1,0 +1,10 @@
+.list-subreddit {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #1c1c1c;
+    text-align: center;
+}
+.list-subreddit > ul {
+    list-style-type: none;
+}

@@ -1,24 +1,25 @@
-.sidebar{
+.sidebar {
     width: 312px;
     height: 242px;
     --post-line-color: #ccc;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     overflow: hidden;
-    background-color: rgba(255,255,255,0.8);
-    color: #878A8C;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #878a8c;
     position: relative;
     border-radius: 4px;
-    padding:5px;
+    padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.btnCreatePost, .btnCreateSubreddit{
-    background-color: #0079D3;
-    border-color: #0079D3;
+.btnCreatePost,
+.btnCreateSubreddit {
+    background-color: #0079d3;
+    border-color: #0079d3;
     color: aliceblue;
-    fill: #0079D3;
+    fill: #0079d3;
     border: 1px solid;
     border-radius: 4px;
     text-align: center;
@@ -26,7 +27,7 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 24px;
     text-transform: uppercase;
     padding: 3px 16px;
@@ -35,13 +36,13 @@
     height: 34px;
 }
 
-.btnCreateSubreddit{
+.btnCreateSubreddit {
     margin-top: 5px;
-    color: #0079D3;
+    color: #0079d3;
     background-color: transparent;
 }
 
-.sidebar>ul>li{
+.sidebar > ul > li {
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;

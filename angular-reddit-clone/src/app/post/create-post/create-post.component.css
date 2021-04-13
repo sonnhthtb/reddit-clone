@@ -1,32 +1,32 @@
 .btnCreatePost,
 .btnCreateSubreddit {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .post-form {
-  margin: 2px;
+    margin: 2px;
 }
 
 .comment-notification {
-  margin-top: 5px;
+    margin-top: 5px;
 }
 
 .create-post-container {
-  margin-top: 10px;
-  --post-line-color: #ccc;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #878A8C;
-  position: relative;
-  border-radius: 4px;
-  padding: 5px;
+    margin-top: 10px;
+    --post-line-color: #ccc;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #878a8c;
+    position: relative;
+    border-radius: 4px;
+    padding: 5px;
 }
 
 .btnDiscard {
-    fill: #0079D3;
+    fill: #0079d3;
     border: 1px solid;
     border-radius: 4px;
     text-align: center;
@@ -34,7 +34,7 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 24px;
     text-transform: uppercase;
     padding: 3px 16px;
@@ -42,24 +42,24 @@
     width: 288px;
     height: 34px;
     margin-top: 5px;
-    color: #0079D3;
+    color: #0079d3;
     background-color: transparent;
-  }
+}
 
 .create-post-heading {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-  color: #1c1c1c;
-  -ms-flex: 1;
-  flex: 1;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #1c1c1c;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .btnCreatePost {
-    background-color: #0079D3;
-    border-color: #0079D3;
+    background-color: #0079d3;
+    border-color: #0079d3;
     color: aliceblue;
-    fill: #0079D3;
+    fill: #0079d3;
     border: 1px solid;
     border-radius: 4px;
     text-align: center;
@@ -67,11 +67,29 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     line-height: 24px;
     text-transform: uppercase;
     padding: 3px 16px;
     opacity: 1;
     width: 288px;
     height: 34px;
-  }
+}
+ul {
+    list-style-type: none;
+}
+.sidebar {
+    width: 312px;
+    height: 400px;
+    --post-line-color: #ccc;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #878a8c;
+    position: relative;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
