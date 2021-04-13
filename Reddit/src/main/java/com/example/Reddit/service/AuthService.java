@@ -107,12 +107,12 @@ public class AuthService {
 
     public AuthenticationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
         refreshTokenService.validateRefreshToken(refreshTokenRequest.getRefreshToken());
-        String token = jwtProvider.generateTokenWithUserName(refreshTokenRequest.getUserName());
+        String token = jwtProvider.generateTokenWithUserName(refreshTokenRequest.getUsername());
         return AuthenticationResponse.builder()
                 .authenticationToken(token)
                 .refreshToken(refreshTokenRequest.getRefreshToken())
                 .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
-                .username(refreshTokenRequest.getUserName())
+                .username(refreshTokenRequest.getUsername())
                 .build();
     }
 
