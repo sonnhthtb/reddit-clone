@@ -20,7 +20,10 @@ export class TokenInterceptor implements HttpInterceptor {
 
     constructor(public authService: AuthService) {}
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
+    intercept(
+        req: HttpRequest<any>,
+        next: HttpHandler
+    ): Observable<HttpEvent<any>> {
         if (
             req.url.indexOf('refresh') !== -1 ||
             req.url.indexOf('login') !== -1
@@ -29,24 +32,27 @@ export class TokenInterceptor implements HttpInterceptor {
         }
         const jwtToken = this.authService.getJwtToken();
 
-        return next.handle(this.addToken(req, jwtToken)).pipe(
-            catchError((error) => {
-                if (
-                    error instanceof HttpErrorResponse &&
-                    error.status === 403
-                ) {
-                    return this.handleAuthErrors(req, next);
-                } else {
-                    return throwError(error);
-                }
-            })
-        );
+        if (jwtToken) {
+            return next.handle(this.addToken(req, jwtToken)).pipe(
+                catchError((error) => {
+                    if (
+                        error instanceof HttpErrorResponse &&
+                        error.status === 403
+                    ) {
+                        return this.handleAuthErrors(req, next);
+                    } else {
+                        return throwError(error);
+                    }
+                })
+            );
+        }
+        return next.handle(req);
     }
 
     private handleAuthErrors(
         req: HttpRequest<any>,
         next: HttpHandler
-    ): Observable<any> {
+    ): Observable<HttpEvent<any>> {
         if (!this.isTokenRefreshing) {
             this.isTokenRefreshing = true;
             this.refreshTokenSubject.next(null);

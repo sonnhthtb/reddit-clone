@@ -13,8 +13,16 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'create-post', component: CreatePostComponent },
-    { path: 'create-subreddit', component: CreateSubredditComponent },
+    {
+        path: 'create-post',
+        component: CreatePostComponent,
+        canActivate: [AuthGuard],
+    },
+    {
+        path: 'create-subreddit',
+        component: CreateSubredditComponent,
+        canActivate: [AuthGuard],
+    },
     { path: 'list-subreddits', component: ListSubredditsComponent },
     { path: 'view-post/:id', component: ViewPostComponent },
     {
