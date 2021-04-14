@@ -51,4 +51,19 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.OK).body("Refresh Token Deleted Successfully");
     }
 
+    @PostMapping("/check-username")
+    public ResponseEntity<String> checkUsername(@RequestBody RegisterRequest registerRequest) {
+        if(!authService.checkUsername(registerRequest)){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Username is existed");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("Ok");
+    }
+
+    @PostMapping("/check-email")
+    public ResponseEntity<String> checkEmail(@RequestBody RegisterRequest registerRequest) {
+        if(!authService.checkEmail(registerRequest)){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Email is existed");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("Ok");
+    }
 }

@@ -24,6 +24,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -61,7 +63,23 @@ public class AuthService {
                         "http://localhost:8080/api/auth/accountVerification/" + token));
     }
 
+    @Transactional(readOnly = true)
+    public boolean checkUsername(RegisterRequest registerRequest) {
+        Optional<User> user = userRepository.findByUsername( registerRequest.getUsername());
+        if(user.isPresent()){
+            return false;
+        }
+        return true;
+    }
 
+    @Transactional(readOnly = true)
+    public boolean checkEmail(RegisterRequest registerRequest) {
+        Optional<User> user = userRepository.findByEmail( registerRequest.getEmail());
+        if(user.isPresent()){
+            return false;
+        }
+        return true;
+    }
     @Transactional(readOnly = true)
     public User getCurrentUser() {
         org.springframework.security.core.userdetails.User principal = (org.springframework.security.core.userdetails.User) SecurityContextHolder.

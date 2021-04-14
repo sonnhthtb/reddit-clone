@@ -32,6 +32,21 @@ export class AuthService {
         );
     }
 
+    checkUsername(signupRequestPayload: SignupRequestPayload): Observable<any> {
+        return this.httpClient.post(
+            'http://localhost:8080/api/auth/check-username',
+            signupRequestPayload,
+            { responseType: 'text' }
+        );
+    }
+    checkEmail(signupRequestPayload: SignupRequestPayload): Observable<any> {
+        return this.httpClient.post(
+            'http://localhost:8080/api/auth/check-email',
+            signupRequestPayload,
+            { responseType: 'text' }
+        );
+    }
+
     login(loginRequestPayload: LoginRequestPayload): Observable<boolean> {
         return this.httpClient
             .post<LoginResponse>(
