@@ -1,11 +1,6 @@
 .post-title {
     font-size: 28px;
-    font-weight: bold;
-    opacity: 1;
-}
-
-.post-title:hover {
-    opacity: 0.6;
+    font-weight: bolder;
 }
 
 .subreddit-text {
