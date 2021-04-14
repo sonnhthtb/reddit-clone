@@ -34,4 +34,12 @@ public class SubredditController {
     public ResponseEntity<SubredditDto> getSubreddit(@PathVariable(value = "id") Long id){
         return ResponseEntity.status(HttpStatus.OK).body(subredditService.getSubreddit(id));
     }
+
+    @PostMapping("/check-subreddit")
+    public ResponseEntity<String> checkSubreddit(@RequestBody SubredditDto subredditDto){
+        if(!subredditService.checkSubredditByName(subredditDto.getName())){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Subreddit already exists");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("Ok");
+    }
 }

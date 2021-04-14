@@ -29,4 +29,12 @@ export class SubredditService {
             'http://localhost:8080/api/subreddit/' + id
         );
     }
+
+    checkSubreddit(subredditModel: SubredditModel): Observable<any> {
+        return this.http.post(
+            'http://localhost:8080/api/subreddit/check-subreddit',
+            subredditModel,
+            { responseType: 'text' }
+        );
+    }
 }

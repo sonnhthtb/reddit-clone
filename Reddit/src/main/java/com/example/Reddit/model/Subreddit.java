@@ -1,11 +1,10 @@
 package com.example.Reddit.model;
-
-
-import javafx.geometry.Pos;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -33,8 +32,10 @@ public class Subreddit {
     @OneToMany(fetch = FetchType.LAZY)
     private List<Post> posts;
 
+    @CreatedDate
     private Instant createdDate;
 
+    @CreatedBy
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 

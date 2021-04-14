@@ -3,9 +3,10 @@
         <div class="row">
             <hr />
             <div class="col-md-9">
-                <hr>
-                <h4>{{subredditModel.name}}</h4>
-                <hr>
+                <div class="subredditDetails">
+                    <h4>{{subredditModel.name}}</h4>
+                </div>
+
                 <app-post-tile [posts]="posts"></app-post-tile>
             </div>
             <div class="col-md-3">
